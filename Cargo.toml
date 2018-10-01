@@ -22,6 +22,7 @@ members = [
   "tests/multifile",
   "tests/collide",
   "tests/name-case",
+  "tests/nested-package",
   "tests/unused-imports",
 ]
 

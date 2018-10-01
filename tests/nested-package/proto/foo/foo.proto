@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mypackage.foo;
+
+// A basic message
+message FooRequest {
+  string Foo = 1;
+}
+
+// A basic message
+message FooResponse{
+  string Foo = 1;
+}
