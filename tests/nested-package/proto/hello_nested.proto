@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package hello.nested;
+
+import "common/common.proto";
+import "common/nested.proto";
+
+// A different HelloRequest
+message HelloRequest {
+  string name = 2;
+}
+
+// The greeting service definition.
+service Hello {
+  // Sends a greeting
+  rpc SayHello (hello.common.HelloRequest) returns (hello.common.nested.HelloReply) {}
+
+  rpc SayHello2 (HelloRequest) returns (hello.common.nested.HelloReply) {}
+}

@@ -4,11 +4,19 @@ extern crate prost;
 extern crate prost_derive;
 extern crate tower_grpc;
 
-pub mod mypackage {
-    include!(concat!(env!("OUT_DIR"), "/mypackage.rs"));
+pub mod hello {
+    include!(concat!(env!("OUT_DIR"), "/hello.rs"));
 
-    pub mod foo {
-        include!(concat!(env!("OUT_DIR"), "/mypackage.foo.rs"));
+    pub mod common {
+        include!(concat!(env!("OUT_DIR"), "/hello.common.rs"));
+
+        pub mod nested {
+            include!(concat!(env!("OUT_DIR"), "/hello.common.nested.rs"));
+        }
+    }
+
+    pub mod nested {
+        include!(concat!(env!("OUT_DIR"), "/hello.nested.rs"));
     }
 }
 
@@ -18,7 +26,6 @@ mod tests {
 
     #[test]
     fn types_are_present() {
-        mem::size_of::<::mypackage::foo::FooRequest>();
+        mem::size_of::<::hello::HelloRequest>();
     }
 }
-

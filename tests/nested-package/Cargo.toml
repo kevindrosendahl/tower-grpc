@@ -1,7 +1,7 @@
 [package]
 name = "nested-package"
 version = "0.1.0"
-authors = ["Carl Lerche <me@carllerche.com>"]
+authors = ["Kevin Rosendahl <kevindrosendahl@gmail.com>"]
 publish = false
 
 [dependencies]
